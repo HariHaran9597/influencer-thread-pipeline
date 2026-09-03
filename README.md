@@ -1,190 +1,293 @@
-# 🧵 Influencer Thread Pipeline
+# ThreadForge
 
-**Researcher → Writer → Fact-checker → Editor ×3 → Formatter → Virality strategist → LinkedIn / Twitter / Instagram**, wired as a
-[LangGraph](https://langchain-ai.github.io/langgraph/) state machine with two real feedback loops
-and a measurement harness. Not "chat with a PDF": every claim carries a `[n]` citation, the
-fact-checker sends unverifiable claims back (or **drops** them), the editor rejects and improves
-drafts, and a guardrail layer quarantines prompt-injected sources — all of it traced and evaluated
-on a 20-topic golden set.
+### Evidence-aware, multi-agent content generation for LinkedIn, X, and Instagram
 
-![mode](https://img.shields.io/badge/mode-live%20%2B%20mock-blueviolet)
-![fact](https://img.shields.io/badge/fact--check%20pass-96.3%25%20live%20%C2%B7%20100%25%20mock-green)
-![injections](https://img.shields.io/badge/injections%20blocked-13%2F13-brightgreen)
-![tests](https://img.shields.io/badge/tests-34%20passed-success)
+ThreadForge is a stateful [LangGraph](https://langchain-ai.github.io/langgraph/) workflow that turns a topic into platform-native social content backed by research citations.
 
-> The repository includes a historical live snapshot plus a deterministic offline baseline.
-> Mock scores validate routing and guardrail plumbing; they are not claims of real-world factual
-> accuracy. Full detail and reproduction commands are in [`reports/eval.md`](reports/eval.md).
+It combines:
+
+- source research with Tavily and a deterministic offline corpus;
+- cited drafting with Groq or a deterministic mock writer;
+- independent claim-level fact checking;
+- a bounded writer ↔ editor feedback loop;
+- source and output guardrails for prompt injection, PII, and citation errors;
+- platform-specific formatting and browser previews;
+- an evidence-aware viral-potential strategy layer.
+
+> Viral potential is a content-readiness heuristic, not a promise of reach or engagement. The system never adds unsupported claims, fake urgency, or fabricated social proof to make a post look more viral.
+
+[![Python](https://img.shields.io/badge/python-%3E%3D3.10-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![LangGraph](https://img.shields.io/badge/orchestration-LangGraph-6B46C1)](https://langchain-ai.github.io/langgraph/)
+[![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Tests](https://img.shields.io/badge/tests-34%20passed-success)](tests/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+## Why this project exists
+
+A single prompt can produce polished-looking copy that contains unsupported claims. ThreadForge treats content generation as a workflow with observable state and recovery paths:
+
+1. Research a topic and normalize source provenance.
+2. Scan sources for prompt-injection patterns.
+3. Draft one version per selected platform.
+4. Check every factual claim against its cited source.
+5. Re-research when claims fail, or drop unverifiable claims at the retry cap.
+6. Let an editor score clarity, tone, and platform fit.
+7. Revise rejected drafts up to three rounds.
+8. Format the approved copy for each platform.
+9. Re-check PII and citations before publishing the result.
+10. Score viral-readiness signals and seal the run in an audit trace.
 
 ## Architecture
 
-```
-START
-  └─> Researcher ── Tavily (or mock corpus, disk-cached) ──> 10 sources {title,url,snippet,date}
-        └─> Guardrail[sources] ── injection scan ── quarantined sources never reach the writer
-              └─> Writer ── cited drafts v1 per platform (mock v1 ships one bad claim on purpose)
-                    └─> Fact-checker ── claim vs source entailment (0-1, independent judge)
-                          │   fail & retries < 2 ──> back to Researcher   (loop 1)
-                          │   fail & retries = 2 ──> DROP the claims      (never loop forever)
-                          ▼
-                    Editor ── clarity / tone / platform-fit (1-5) + critique, max 3 rounds
-                          │   any reject & rounds < 3 ──> back to Writer  (loop 2)
-                          ▼
-                    Formatters ── LinkedIn ≤600w · Twitter 280-char numbered thread (URLs=23) · IG caption+20 hashtags
-                          └─> Guardrail[outputs] ── PII redaction + citation verification
-                                └─> Virality strategist ── evidence-aware hook / format / interaction score
-                                      └─> Tracker ── reports/traces.jsonl (FULL state: every version,
-                                               every score, every critique, tokens, latency)
+```mermaid
+flowchart TD
+    A[Topic] --> B[Researcher\nTavily or mock corpus]
+    B --> C[Source guardrail\ninjection scan]
+    C --> D[Writer\nLinkedIn / X / Instagram]
+    D --> E[Fact checker\nclaim vs citation]
+    E -->|failed claims + retries left| B
+    E -->|pass or claims dropped| F[Editor\nclarity / tone / fit]
+    F -->|rejected + rounds left| D
+    F -->|approved or cap reached| G[Platform formatters]
+    G --> H[Output guardrail\nPII + citation validation]
+    H --> I[Virality strategist\nreadiness heuristic]
+    I --> J[Tracker\nfull audit state]
 ```
 
-**State is the product**: research bundle, every draft version, per-claim fact scores, editor
-critiques, guardrail reports and telemetry all survive to `reports/traces.jsonl`.
+The LangGraph state preserves the research bundle, stable source IDs, every draft version, claim results, editor critiques, guardrail reports, virality recommendations, telemetry, and the final outputs.
 
-## Quickstart ($0 — works offline)
+## Platform-native output
+
+| Platform | Output behavior | Preview behavior |
+|---|---|---|
+| LinkedIn | Short paragraphs, inline citations, professional tone, closing question | LinkedIn-style post card with sources |
+| X | Numbered 280-character thread with URL-aware counting | Connected X thread with post numbering and character rings |
+| Instagram | Caption capped at 150 words plus 20 generated hashtags | Carousel-style image cards with text inside each slide and caption below |
+
+The Instagram carousel is currently a browser-rendered preview. It does not yet export PNG/JPG assets or publish directly to social networks.
+
+## Quickstart
+
+### 1. Install
 
 ```bash
 python -m venv .venv
-.venv/Scripts/pip install -r requirements.txt        # (linux/mac: .venv/bin/pip)
 
-# no API keys needed — deterministic mock mode:
-.venv/Scripts/python -m src.influencer_pipeline "iPhone 17 launch specs and price" --mock
+# Windows
+.venv\\Scripts\\pip install -r requirements.txt
 
-# web demo: 3 platform tabs + sources + fact-check + editor loop + trace
-.venv/Scripts/python app.py                          # -> http://127.0.0.1:7860
-
-# tests (34) and eval harness (20 topics, A/B vs single-prompt baseline)
-.venv/Scripts/python -m pytest tests/
-.venv/Scripts/python scripts/evaluate.py --mock
+# macOS / Linux
+# .venv/bin/pip install -r requirements.txt
 ```
 
-### Going live (still $0)
+### 2. Run offline in mock mode
 
-Copy `.env.example` → `.env` and add any of:
+No API keys are needed for the deterministic demo:
 
-| Key | Powers | Free tier (verified Aug 2026) |
-|---|---|---|
-| `GROQ_API_KEY` | writer/editor LLM | ~30 req/min, ~14.4k req/day |
-| `TAVILY_API_KEY` | web research | 1,000 credits/month |
-| `GOOGLE_API_KEY` | independent judge (recommended — judge ≠ writer) | generous free quota |
-| `LANGSMITH_API_KEY` | LangSmith tracing | free developer tier |
+```bash
+python -m src.influencer_pipeline "iPhone 17 launch specs and price" --mock
+```
 
-Every capability degrades independently: no Tavily → mock corpus; no Groq → deterministic mock
-writer; no judge key → heuristic entailment. The demo never breaks on stage. Search results are
-disk-cached (`data/cache/`) so eval re-runs are reproducible and don't burn quota.
+### 3. Run the custom web application
 
-## Measured results
+The FastAPI process serves both the NDJSON API and the custom frontend:
 
-**Historical live snapshot (from `reports/traces.jsonl`):**
+```bash
+uvicorn backend.main:app --host 127.0.0.1 --port 7860
+```
 
-| Metric | Value |
+Open [http://127.0.0.1:7860](http://127.0.0.1:7860).
+
+Health check:
+
+```text
+http://127.0.0.1:7860/api/health
+```
+
+### Optional: run the Gradio inspection UI
+
+```bash
+python app.py
+```
+
+The Gradio UI is useful for inspecting raw platform outputs, sources, fact checks, editor rounds, and metrics. The custom FastAPI frontend is the portfolio-facing experience.
+
+## Configuration
+
+Copy `.env.example` to `.env`. Every key is optional; missing providers fall back independently to deterministic mock behavior.
+
+| Variable | Purpose |
 |---|---|
-| Fact pass (claims entailed by cited source) | **96.3% mean**, 23/26 runs at 100% |
-| Claims dropped as unverifiable / run | 1.15 (dropped, never published) |
-| Fact-check retries / run | 1.19 (cap 2, then drop) |
-| Editor reject curve | v1 100% → v2 58% → v3 92% |
-| Latency (3 platforms, loops included) | median 157s · p95 406s |
-| Injection suite | **13/13 blocked, 0 false positives** |
+| `GROQ_API_KEY` | Writer and editor LLM calls |
+| `TAVILY_API_KEY` | Live web research |
+| `GOOGLE_API_KEY` | Optional independent judge provider |
+| `LANGSMITH_API_KEY` | Optional LangSmith tracing |
+| `WRITER_MODEL` | Writer model override |
+| `JUDGE_MODEL` | Judge model override |
+| `MOCK_LLM` | Force deterministic offline mode with `1` |
+| `API_AUTH_TOKEN` | Optional API authentication for private deployments |
+| `CORS_ORIGINS` | Allowed frontend origins |
+| `RATE_LIMIT_PER_MINUTE` | Per-host in-process request limit |
+| `TRACE_RAW_CONTENT` | Keep raw trace content only when explicitly set to `1` |
 
-**Mock (20-topic synthetic benchmark, deterministic — from `reports/eval.md`):**
+For a public deployment, keep `TRACE_RAW_CONTENT=0`, use server-side secrets, and enforce authentication/rate limiting at a shared gateway when running multiple workers.
 
-| Config | Fact pass | Editor reject curve | Style L/T/I | Tokens/run |
-|---|---|---|---|---|
-| single-prompt baseline | 83.3% | – | 3.7 / 3.7 / 3.7 | 763 |
-| **4-agent pipeline (×3 loops)** | **100.0%** | 100% → 0% | 5.0 / 5.0 / 5.0 | 3,225 |
+## API
 
-- Fact-check loop: 10 claims/run checked, 1.00 retries/run average, 20/20 topics needed ≥1 retry
-- Guardrail suite: **13/13 injections blocked, 0 false positives** on clean docs
-  ([`data/adversarial_injections.jsonl`](data/adversarial_injections.jsonl))
-- 34/34 tests pass, including end-to-end graph tests that assert both loops fire
+`POST /api/run` streams newline-delimited JSON events while the graph runs.
 
-*Mock-mode numbers prove the plumbing (loops route, claims get caught/dropped, guardrails fire)
-deterministically. Live-mode LLM numbers will differ — rerun `scripts/evaluate.py` with keys and
-the report regenerates itself. Report measured numbers, never targets.*
-
-## Design decisions
-
-1. **Judge ≠ writer.** Fact-check/style judging prefers a Google key, else a *different, smaller*
-   Groq model — a model grading its own output is self-grading. Heuristic fallback (word/number
-   containment) keeps it honest offline, and a wrong number in an otherwise-verbatim claim fails.
-2. **Loops are capped, then escalate.** Fact-check retries twice, then *drops* unverifiable claims
-   (dropped-count is a reported metric). Editor loops 3 rounds max, then ships and the cap-hit is
-   visible in traces.
-3. **Guardrails run twice.** Injection scan happens on sources *before* the writer sees them;
-   PII redaction + `[n]` citation verification happen on final outputs.
-4. **Cache every search.** Reproducible evals, zero quota burn while debugging loops.
-5. **Editor approval is not a mean.** Approve = mean ≥ 4.0 **and** no dimension < 3.5 — a great
-   average can't hide a missing hook.
-
-## Layout
-
+```bash
+curl -N -X POST http://127.0.0.1:7860/api/run \
+  -H "Content-Type: application/json" \
+  -d '{
+    "topic": "How should teams evaluate AI agents?",
+    "platforms": ["linkedin", "twitter", "instagram"]
+  }'
 ```
+
+The stream emits pipeline-step events followed by a final result containing:
+
+- `summary` — fact, editor, guardrail, latency, token, and virality metrics;
+- `outputs` — final formatted content per platform;
+- `sources` — post-guardrail research sources;
+- `claim_results` — citation-level entailment decisions;
+- `editor_critiques` — round-by-round style feedback;
+- `virality` — platform-specific readiness score, angle, dimensions, and recommendations;
+- `log` — the audit trail for the run.
+
+## Evaluation
+
+The repository includes a deterministic 20-topic benchmark and a prompt-injection suite. These results measure routing, formatting, and guardrail plumbing; mock-mode numbers are not claims of real-world factual accuracy.
+
+| Configuration | Fact pass | Editor reject curve | Style score: L / X / IG | Tokens per run |
+|---|---:|---:|---:|---:|
+| Single-prompt baseline | 83.3% | — | 3.7 / 3.7 / 3.7 | 763 |
+| ThreadForge workflow | 100.0% | 100% → 0% | 5.0 / 5.0 / 5.0 | 3,225 |
+
+Additional measured checks:
+
+- 13/13 prompt-injection examples blocked with 0 false positives in the guardrail suite.
+- Fact-check retry loop exercised across the 20-topic mock benchmark.
+- 34/34 automated tests pass.
+
+Run the benchmark yourself:
+
+```bash
+python scripts/evaluate.py --mock
+```
+
+Live metrics should be regenerated with a versioned source set, model versions, judge coverage, and run date before being used as production claims.
+
+## Testing
+
+```bash
+python -m pytest -q
+```
+
+The test suite covers:
+
+- end-to-end LangGraph routing;
+- fact-check and editor feedback loops;
+- citation and PII guardrails;
+- stable source provenance through retries and quarantine;
+- LinkedIn, X, and Instagram formatter limits;
+- virality strategy scoring and safety guidance;
+- privacy-conscious trace behavior.
+
+## Deployment
+
+### Recommended: one Docker service on Hugging Face Spaces
+
+This repository includes a production-oriented `Dockerfile` that starts FastAPI on port `7860` and serves the frontend and API from one origin. Hugging Face Docker Spaces support custom applications such as FastAPI and use `7860` as the default application port. See the [Hugging Face Docker Spaces documentation](https://huggingface.co/docs/hub/main/spaces-sdks-docker).
+
+1. Create a Hugging Face Space with the **Docker** SDK.
+2. Push this repository into the Space.
+3. Add provider credentials as Space secrets:
+
+   ```text
+   GROQ_API_KEY
+   TAVILY_API_KEY
+   GOOGLE_API_KEY
+   ```
+
+4. Set deployment variables:
+
+   ```text
+   MOCK_LLM=0
+   TRACE_RAW_CONTENT=0
+   RATE_LIMIT_PER_MINUTE=30
+   CORS_ORIGINS=https://YOUR-SPACE-NAME.hf.space
+   ```
+
+5. Open `https://YOUR-USERNAME-YOUR-SPACE-NAME.hf.space` and verify `/api/health`.
+
+For a public portfolio demo, do not place a private `API_AUTH_TOKEN` in browser code. Use the built-in rate limit for a small demo or add authentication and rate limiting at an external gateway for a real multi-user deployment.
+
+### Optional: Vercel frontend + Hugging Face backend
+
+`vercel.json` is configured to deploy the `frontend/` directory as a static site. Vercel can import a Git repository and automatically create deployments for pushes and preview URLs. See the [Vercel deployment documentation](https://vercel.com/docs/deployments/overview).
+
+1. Import the repository into Vercel.
+2. Keep the framework preset as **Other**.
+3. Deploy the static frontend.
+4. Set the Hugging Face Space URL under **Settings → Backend URL** in the app.
+5. Configure the backend `CORS_ORIGINS` with the Vercel production URL.
+
+The single-service deployment is simpler for a portfolio because it avoids cross-origin setup and keeps the API and frontend versioned together.
+
+## Security and privacy
+
+- `.env` is ignored; never commit provider credentials.
+- BYOK keys are held in browser storage and sent per request; they are not written to traces.
+- Source prompt-injection scanning runs before content generation.
+- PII redaction and citation validation run after formatting.
+- Raw source snippets and drafts are minimized/redacted in persistent traces by default.
+- Fact-check and editor loops are bounded to prevent infinite execution.
+- A process lock protects the provider-key swap used by the BYOK demo path.
+
+Rotate any key that has ever been committed, pasted into a public issue, or shared in a chat before publishing the repository.
+
+## Repository layout
+
+```text
 src/influencer_pipeline/
-  config.py  state.py  llm.py          # knobs, typed LangGraph state, provider fallbacks
-  researcher.py  guardrail.py          # Tavily+cache+mock · injection/PII/citation
-  writer.py  fact_checker.py  editor.py  virality.py # agents + deterministic virality strategist
-  formatter.py  formatters/{linkedin,twitter,instagram}.py
-  graph.py  tracker.py  __main__.py    # wiring · traces.jsonl · CLI
-scripts/evaluate.py                    # 20-topic A/B harness -> reports/eval.md
-app.py                                 # Gradio demo (quick local UI)
-backend/main.py                        # FastAPI: /api/run NDJSON stream + BYOK + static hosting
-frontend/                              # custom minimal dark UI (Vercel-deployable)
-  index.html  styles.css  app.js
-tests/                                 # 34 tests: formatters, guardrails, e2e graph, virality strategy
-data/{topics.jsonl, mock_sources.json, adversarial_injections.jsonl, cache/}
+  researcher.py             Tavily, cache, and mock research
+  writer.py                 cited drafts and revision feedback
+  fact_checker.py           claim-to-source entailment scoring
+  editor.py                 clarity, tone, and platform-fit review
+  virality.py               deterministic viral-readiness strategy
+  formatter.py              platform output assembly
+  formatters/               LinkedIn, X, and Instagram limits
+  guardrail.py              injection, PII, and citation checks
+  graph.py                  LangGraph state machine and loops
+  tracker.py                metrics and privacy-conscious traces
+
+backend/main.py             FastAPI NDJSON API and static hosting
+frontend/                   custom platform-native preview UI
+app.py                      optional Gradio inspection UI
+scripts/evaluate.py         20-topic benchmark and baseline comparison
+reports/                    evaluation report and local audit artifacts
+data/                       topics, mock sources, and adversarial cases
+tests/                      34 unit, integration, and end-to-end tests
+Dockerfile                  single-service deployment image
+vercel.json                 optional static frontend deployment config
 ```
 
-## Resume bullet (fill in your live numbers)
+## Resume-ready description
 
-> **Influencer Thread Pipeline — 4-agent LangGraph system with fact-check, editor, and virality strategy loops**
-> Built Researcher→Writer→Fact-checker→Editor×3 over Tavily/Groq, emitting cited LinkedIn/Twitter/Instagram posts with evidence-aware viral angles; independent-model fact-checking reached __% claim entailment on a 20-topic golden set, editor rejects fell __%→__% across rounds, guardrails blocked __/13 prompt injections with 0 false positives, and the single-prompt A/B baseline shows the loop's value at __× cost — all traced to per-run audit logs.
+> Built a stateful LangGraph content-generation workflow using Tavily and Groq that researches topics, emits citation-backed LinkedIn/X/Instagram content, retries failed claims, iterates with an editor, enforces prompt-injection/PII/citation guardrails, and produces auditable virality-readiness recommendations across platform-native formats.
 
-## Deploy (both free)
-
-Two-piece architecture: **Vercel hosts the static frontend, HF Spaces hosts the FastAPI backend**.
-(Vercel's free serverless functions cap at ~60s and a live run takes 50–150s, so the pipeline
-backend lives on HF Spaces' free persistent tier instead.)
-
-### Backend → Hugging Face Spaces (FastAPI SDK)
-
-1. Create a Space → SDK: **Docker** (or Gradio SDK w/ custom start), push the repo.
-2. Add Space secrets: `GROQ_API_KEY`, `TAVILY_API_KEY` (server mode — visitors' BYOK keys are not needed).
-3. `Dockerfile` = python:3.11-slim, `pip install -r requirements.txt`, `CMD uvicorn backend.main:app --host 0.0.0.0 --port 7860`.
-4. Your API is at `https://<user>-<space>.hf.space` — it also serves this same frontend, so one URL works alone.
-
-### Frontend → Vercel
-
-1. Push repo to GitHub → Vercel "Import Project" → Framework Preset: **Other** (vercel.json already
-   sets `outputDirectory: frontend`).
-2. Visitors click **⚙ Settings** and paste *their own* Groq/Tavily keys (BYOK) — keys are stored in
-   the visitor's localStorage and sent per request only, never persisted server-side. Without keys
-   the app runs in mock mode.
-3. Point the frontend at your backend: visitors enter the Space URL under Settings → Backend URL
-   (or hardcode it in `frontend/app.js` before deploying).
-4. When you "go live" properly, keep the server keys and hide the BYOK panel — same code path.
-
-> Rotate any API key that has ever been pasted into a chat or committed anywhere before publishing.
-
-## Portfolio and production notes
-
-This repository is a portfolio-grade reference implementation of a grounded,
-stateful LLM workflow. Mock-mode evaluation is intentionally deterministic and
-uses a synthetic corpus; its scores validate routing, formatting, and guardrail
-plumbing, not real-world factual accuracy. Live quality numbers should only be
-reported with the source set, model versions, judge coverage, and run date.
-
-For a public deployment, configure `API_AUTH_TOKEN`, `CORS_ORIGINS`,
-`RATE_LIMIT_PER_MINUTE`, and leave `TRACE_RAW_CONTENT=0`. The API includes a
-single-process lock and rate limit; multi-worker deployments should enforce
-authentication, rate limiting, and request timeouts at a shared gateway.
-
-The output path re-checks citations after formatting, and every writer revision
-returns through fact-checking before editor approval. Stable `source_id` values
-are retained in the audit state so source provenance survives retries and
-source quarantine.
+Use measured live results only after rerunning the benchmark with documented models, sources, and dates.
 
 ## Roadmap
 
-- [ ] Re-run live-mode evaluation with a versioned, primary-source benchmark
-- [ ] Optional local BGE cross-encoder for entailment scoring (`sentence-transformers`)
-- [ ] LangSmith trace dashboard screenshots in README
-- [ ] GIF: research → draft → fact-fail → fix → approved output
+- [ ] Export Instagram carousel slides as downloadable PNG/JPG assets
+- [ ] Add primary-source benchmark sets by domain
+- [ ] Add LangSmith trace screenshots and a public demo URL
+- [ ] Add shared-store rate limiting for multi-worker deployments
+- [ ] Add optional local cross-encoder scoring for claim entailment
+- [ ] Add social publishing adapters behind explicit user approval
+
+## License
+
+Released under the [MIT License](LICENSE).
