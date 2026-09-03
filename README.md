@@ -273,21 +273,6 @@ Dockerfile                  single-service deployment image
 vercel.json                 optional static frontend deployment config
 ```
 
-## Resume-ready description
-
-> Built a stateful LangGraph content-generation workflow using Tavily and Groq that researches topics, emits citation-backed LinkedIn/X/Instagram content, retries failed claims, iterates with an editor, enforces prompt-injection/PII/citation guardrails, and produces auditable virality-readiness recommendations across platform-native formats.
-
-Use measured live results only after rerunning the benchmark with documented models, sources, and dates.
-
-## Roadmap
-
-- [ ] Export Instagram carousel slides as downloadable PNG/JPG assets
-- [ ] Add primary-source benchmark sets by domain
-- [ ] Add LangSmith trace screenshots and a public demo URL
-- [ ] Add shared-store rate limiting for multi-worker deployments
-- [ ] Add optional local cross-encoder scoring for claim entailment
-- [ ] Add social publishing adapters behind explicit user approval
-
 ## License
 
 Released under the [MIT License](LICENSE).
