@@ -1,0 +1,1371 @@
+{
+ "pipeline": [
+  {
+   "topic": "iPhone 17 launch specs and price",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 7.8,
+   "tokens": 3062,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 1503.3221000012418,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "GATE 2026 syllabus changes",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 8.3,
+   "tokens": 3427,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 29.3216999998549,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "foreign masters application process for Indian students",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 8.6,
+   "tokens": 4084,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 29.82030000021041,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "NVIDIA Blackwell GPU availability",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 8.9,
+   "tokens": 3167,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 30.7370999998966,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "India UPI international payments expansion",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 8.2,
+   "tokens": 3207,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 38.60979999990377,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "semiconductor jobs in India 2026",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 14.5,
+   "tokens": 3164,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 45.48660000000382,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "AI engineer roadmap for beginners",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 10.0,
+   "tokens": 3167,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 40.92839999975695,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "Germany student visa changes 2026",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 9.5,
+   "tokens": 3167,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 37.109000000782544,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "Electric vehicle subsidies in India",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 6.3,
+   "tokens": 3174,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 32.29950000059034,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "freelancing on Upwork first client guide",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 8.3,
+   "tokens": 3202,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 33.254899999519694,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "ISRO Gaganyaan mission timeline",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 6.7,
+   "tokens": 3155,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 26.08450000116136,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "quantum computing breakthroughs 2026",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 11.0,
+   "tokens": 3183,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 31.14370000002964,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "data analyst vs data scientist career comparison",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 8.8,
+   "tokens": 3240,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 30.35460000137391,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "IELTS new format changes",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 7.6,
+   "tokens": 3126,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 29.032399999778136,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "protein folding AI drug discovery",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 8.6,
+   "tokens": 3167,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 32.119499999680556,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "startup funding winter India 2026",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 8.3,
+   "tokens": 3167,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 31.485699999393546,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "remote work visa countries 2026",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 7.9,
+   "tokens": 3155,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 33.69770000062999,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "solid state battery EV progress",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 9.9,
+   "tokens": 3155,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 34.05709999969986,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "GSAT-20 satellite launch details",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 8.3,
+   "tokens": 3164,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 35.67260000090755,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  },
+  {
+   "topic": "SOC 2 compliance for SaaS startups",
+   "mock": true,
+   "fact": {
+    "claims_checked": 10,
+    "pass_pct": 100.0,
+    "dropped": 0,
+    "retries": 1
+   },
+   "editor": {
+    "reject_pct_by_round": {
+     "v1": 100.0,
+     "v2": 0.0
+    },
+    "rounds": 2
+   },
+   "guardrail": {
+    "sources_quarantined": 0,
+    "pii_redactions": 0,
+    "citation_errors": 0
+   },
+   "versions": {
+    "linkedin": 3,
+    "twitter": 3,
+    "instagram": 3
+   },
+   "latency_ms": 8.2,
+   "tokens": 3169,
+   "nodes": [
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "researcher",
+    "guardrail_sources",
+    "writer",
+    "fact_checker",
+    "editor",
+    "writer",
+    "fact_checker",
+    "editor",
+    "formatter",
+    "guardrail_outputs",
+    "tracker"
+   ],
+   "wall_ms": 34.94730000056734,
+   "style": {
+    "linkedin": 5.0,
+    "twitter": 5.0,
+    "instagram": 5.0
+   }
+  }
+ ],
+ "baseline": [
+  {
+   "outputs": {
+    "linkedin": "iPhone 17 launch specs and price — everything you need to know.\n\nApple unveiled the iPhone 17 series powered by the new A19 chip. [1]\n\nThe base model starts at $799 and ships September 19. [1]\n\nIndustry insiders confirm expectations around iPhone 17 launch specs and price are at an all-time high this cycle. [6]\n\nThe iPhone 17 Pro adds a 48MP telephoto lens with 5x optical zoom. [2]\n\nProRes RAW video recording is now supported at 4K 60fps. [2]\n\nLab tests show the iPhone 17 lasts 22 hours in mixed usage, up from 19 hours for the iPhone 16. [3]\n\nCharging reaches 50 percent in 30 minutes. [3]\n\nFor the first time, every iPhone 17 model including the base version gets a 120Hz ProMotion display. [4]\n\nPeak outdoor brightness reaches 3000 nits. [4]\n\nIn India the iPhone 17 starts at Rs 79,900 and the Pro at Rs 1,19,900. [5]\n\nPre-orders open September 13 with availability from September 19. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Apple announces iPhone 17 lineup with A19 chip — https://example-demo.com/apple-iphone-17-a19\n[2] iPhone 17 Pro camera upgrades detailed — https://example-demo.com/iphone-17-pro-camera\n[3] iPhone 17 battery life test results — https://example-demo.com/iphone-17-battery-test\n[4] iPhone 17 display: 120Hz across all models — https://example-demo.com/iphone-17-display-120hz\n[5] iPhone 17 India pricing announced — https://example-demo.com/iphone-17-india-price",
+    "twitter": "1/8 iPhone 17 launch specs and price — everything you need to know.\n\n2/8 Apple unveiled the iPhone 17 series powered by the new A19 chip. [1]\n\n3/8 The iPhone 17 Pro adds a 48MP telephoto lens with 5x optical zoom. [2]\n\n4/8 Industry insiders confirm expectations around iPhone 17 launch specs and price are at an all-time high this cycle. [6]\n\n5/8 Lab tests show the iPhone 17 lasts 22 hours in mixed usage, up from 19 hours for the iPhone 16. [3]\n\n6/8 For the first time, every iPhone 17 model including the base version gets a 120Hz ProMotion display. [4]\n\n7/8 In India the iPhone 17 starts at Rs 79,900 and the Pro at Rs 1,19,900. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "iPhone 17 launch specs and price — everything you need to know.\n\n• Apple unveiled the iPhone 17 series powered by the new A19 chip. [1]\n• The iPhone 17 Pro adds a 48MP telephoto lens with 5x optical zoom. [2]\n• Industry insiders confirm expectations around iPhone 17 launch specs and price are at an all-time high this cycle. [6]\n• Lab tests show the iPhone 17 lasts 22 hours in mixed usage, up from 19 hours for the iPhone 16. [3]\n• For the first time, every iPhone 17 model including the base version gets a 120Hz ProMotion display. [4]\n• In India the iPhone 17 starts at Rs 79,900 and the Pro at Rs 1,19,900. [5]\n\n💬 Which one surprised you?\n\n#Iphone #A19 #Across #Announced #Announces #Apple #Battery #Camera #Chip #Detailed #Display #India #Launch #Life #Lineup #Models #Price #Pricing #Pro #Results"
+   },
+   "tokens": 743,
+   "latency_ms": 1.7143000004580244,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "GATE 2026 syllabus changes — everything you need to know.\n\nThe organizing IIT revised the GATE 2026 syllabus for computer science, adding topics in linear algebra and machine learning fundamentals. [1]\n\nThe exam will be held on February 7, 8, 14 and 15. [1]\n\nIndustry insiders confirm expectations around GATE 2026 syllabus changes are at an all-time high this cycle. [6]\n\nGATE 2026 registration opens August 25 and closes October 3 without late fee. [2]\n\nThe regular fee is Rs 900 for female, SC, ST and PwD candidates and Rs 1,800 for others. [2]\n\nGATE 2026 introduces a Data Science and Artificial Intelligence paper with code DA. [3]\n\nCandidates can now choose up to two papers from a combined list. [3]\n\nThe GATE 2026 paper retains 65 questions worth 100 marks over 3 hours. [4]\n\nMultiple select questions carry negative marking, while numerical answer type questions do not. [4]\n\nGATE 2026 scores remain valid for three years from the date of result announcement. [5]\n\nResults are expected on March 19. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] IIT announces GATE 2026 syllabus revision — https://example-demo.com/gate-2026-syllabus-revision\n[2] GATE 2026 registration dates and fees — https://example-demo.com/gate-2026-registration\n[3] Two new papers added to GATE 2026 — https://example-demo.com/gate-2026-new-papers\n[4] GATE 2026 exam pattern changes — https://example-demo.com/gate-2026-pattern\n[5] GATE score validity extended — https://example-demo.com/gate-score-validity",
+    "twitter": "1/8 GATE 2026 syllabus changes — everything you need to know.\n\n2/8 The organizing IIT revised the GATE 2026 syllabus for computer science, adding topics in linear algebra and machine learning fundamentals. [1]\n\n3/8 GATE 2026 registration opens August 25 and closes October 3 without late fee. [2]\n\n4/8 Industry insiders confirm expectations around GATE 2026 syllabus changes are at an all-time high this cycle. [6]\n\n5/8 GATE 2026 introduces a Data Science and Artificial Intelligence paper with code DA. [3]\n\n6/8 The GATE 2026 paper retains 65 questions worth 100 marks over 3 hours. [4]\n\n7/8 GATE 2026 scores remain valid for three years from the date of result announcement. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "GATE 2026 syllabus changes — everything you need to know.\n\n• The organizing IIT revised the GATE 2026 syllabus for computer science, adding topics in linear algebra and machine learning fundamentals. [1]\n• GATE 2026 registration opens August 25 and closes October 3 without late fee. [2]\n• Industry insiders confirm expectations around GATE 2026 syllabus changes are at an all-time high this cycle. [6]\n• GATE 2026 introduces a Data Science and Artificial Intelligence paper with code DA. [3]\n• The GATE 2026 paper retains 65 questions worth 100 marks over 3 hours. [4]\n• GATE 2026 scores remain valid for three years from the date of result announcement. [5]\n\n💬 Which one surprised you?\n\n#Gate #Changes #Syllabus #Added #Announces #Dates #Exam #Extended #Fees #Iit #Papers #Pattern #Registration #Revision #Score #Two #Validity #Research #Facts #DeepDive"
+   },
+   "tokens": 789,
+   "latency_ms": 1.5198000000964385,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "foreign masters application process for Indian students — everything you need to know.\n\nA foreign masters application has six steps: shortlist programs, take required tests, prepare documents, submit applications, arrange funding, and apply for the visa. [1]\n\nMost students complete the cycle in 8 to 12 months. [1]\n\nIndustry insiders confirm expectations around foreign masters application process for Indian students are at an all-time high this cycle. [6]\n\nMany universities in the US and Germany now waive the GRE for masters applicants with strong academics. [2]\n\nIELTS 6.5 or TOEFL 90 remains the common English requirement. [2]\n\nTuition for a two-year masters ranges from 20,000 dollars in Germany public universities to 60,000 dollars in the US. [3]\n\nLiving costs add 800 to 1,500 dollars per month depending on the city. [3]\n\nAdmissions officers report that generic statements of purpose are the most common rejection reason. [4]\n\nStrong SOPs connect specific research interests to named faculty and labs. [4]\n\nThe US F-1 visa approval rate for Indian students was 72 percent last year. [5]\n\nGenuine intent, clear funding proof and program knowledge are the top deciding factors. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Step-by-step guide to applying for a masters abroad — https://example-demo.com/masters-abroad-steps\n[2] GRE and language test requirements 2026 — https://example-demo.com/masters-test-requirements\n[3] How much does a foreign masters actually cost — https://example-demo.com/masters-cost-breakdown\n[4] Statement of purpose mistakes to avoid — https://example-demo.com/sop-mistakes\n[5] Student visa interview success rate data — https://example-demo.com/student-visa-data",
+    "twitter": "1/8 foreign masters application process for Indian students — everything you need to know.\n\n2/8 A foreign masters application has six steps: shortlist programs, take required tests, prepare documents, submit applications, arrange funding, and apply for the visa. [1]\n\n3/8 Many universities in the US and Germany now waive the GRE for masters applicants with strong academics. [2]\n\n4/8 Industry insiders confirm expectations around foreign masters application process for Indian students are at an all-time high this cycle. [6]\n\n5/8 Tuition for a two-year masters ranges from 20,000 dollars in Germany public universities to 60,000 dollars in the US. [3]\n\n6/8 Admissions officers report that generic statements of purpose are the most common rejection reason. [4]\n\n7/8 The US F-1 visa approval rate for Indian students was 72 percent last year. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "foreign masters application process for Indian students — everything you need to know.\n\n• A foreign masters application has six steps: shortlist programs, take required tests, prepare documents, submit applications, arrange funding, and apply for the visa. [1]\n• Many universities in the US and Germany now waive the GRE for masters applicants with strong academics. [2]\n• Industry insiders confirm expectations around foreign masters application process for Indian students are at an all-time high this cycle. [6]\n• Tuition for a two-year masters ranges from 20,000 dollars in Germany public universities to 60,000 dollars in the US. [3]\n• Admissions officers report that generic statements of purpose are the most common rejection reason. [4]\n• The US F-1 visa approval rate for Indian students was 72 percent last year. [5]\n\n💬 Which one surprised you?\n\n#Masters #Foreign #Step #Abroad #Actually #Application #Applying #Avoid #Cost #Data #Does #Gre #Indian #Interview #Language #Mistakes #Much #Process #Purpose #Rate"
+   },
+   "tokens": 926,
+   "latency_ms": 1.6312999996443978,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.33
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "NVIDIA Blackwell GPU availability — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around NVIDIA Blackwell GPU availability are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 NVIDIA Blackwell GPU availability — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around NVIDIA Blackwell GPU availability are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "NVIDIA Blackwell GPU availability — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around NVIDIA Blackwell GPU availability are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Availability #Avoid #Beginner #Blackwell #Current #Expert #Gpu #Guidelines #Key #Latest #Mistakes #Numbers #Nvidia #Official #Open #Overview #Questions #Report #Say"
+   },
+   "tokens": 751,
+   "latency_ms": 1.3462999995681457,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "India UPI international payments expansion — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around India UPI international payments expansion are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 India UPI international payments expansion — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around India UPI international payments expansion are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "India UPI international payments expansion — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around India UPI international payments expansion are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Current #Expansion #Expert #Guidelines #India #International #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Payments #Questions #Report #Say"
+   },
+   "tokens": 767,
+   "latency_ms": 1.5096000006451504,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "semiconductor jobs in India 2026 — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around semiconductor jobs in India 2026 are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 semiconductor jobs in India 2026 — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around semiconductor jobs in India 2026 are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "semiconductor jobs in India 2026 — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around semiconductor jobs in India 2026 are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Current #Expert #Guidelines #India #Jobs #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Say #Semiconductor #Status"
+   },
+   "tokens": 750,
+   "latency_ms": 1.5476999997190433,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "AI engineer roadmap for beginners — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around AI engineer roadmap for beginners are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 AI engineer roadmap for beginners — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around AI engineer roadmap for beginners are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "AI engineer roadmap for beginners — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around AI engineer roadmap for beginners are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Beginners #Current #Engineer #Expert #Guidelines #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Roadmap #Say #Status"
+   },
+   "tokens": 751,
+   "latency_ms": 1.5027999997982988,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "Germany student visa changes 2026 — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around Germany student visa changes 2026 are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 Germany student visa changes 2026 — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around Germany student visa changes 2026 are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "Germany student visa changes 2026 — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around Germany student visa changes 2026 are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Changes #Current #Expert #Germany #Guidelines #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Say #Status #Student"
+   },
+   "tokens": 750,
+   "latency_ms": 1.6376000003219815,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "Electric vehicle subsidies in India — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around Electric vehicle subsidies in India are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 Electric vehicle subsidies in India — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around Electric vehicle subsidies in India are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "Electric vehicle subsidies in India — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around Electric vehicle subsidies in India are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Current #Electric #Expert #Guidelines #India #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Say #Status #Subsidies"
+   },
+   "tokens": 753,
+   "latency_ms": 1.5688999992562458,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "freelancing on Upwork first client guide — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around freelancing on Upwork first client guide are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 freelancing on Upwork first client guide — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around freelancing on Upwork first client guide are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "freelancing on Upwork first client guide — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around freelancing on Upwork first client guide are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Client #Current #Expert #First #Freelancing #Guidelines #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Say #Status"
+   },
+   "tokens": 762,
+   "latency_ms": 1.4795999995840248,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "ISRO Gaganyaan mission timeline — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around ISRO Gaganyaan mission timeline are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 ISRO Gaganyaan mission timeline — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around ISRO Gaganyaan mission timeline are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "ISRO Gaganyaan mission timeline — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around ISRO Gaganyaan mission timeline are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Current #Expert #Gaganyaan #Guidelines #Isro #Key #Latest #Mission #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Say #Status"
+   },
+   "tokens": 747,
+   "latency_ms": 1.4792000001762062,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "quantum computing breakthroughs 2026 — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around quantum computing breakthroughs 2026 are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 quantum computing breakthroughs 2026 — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around quantum computing breakthroughs 2026 are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "quantum computing breakthroughs 2026 — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around quantum computing breakthroughs 2026 are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Breakthroughs #Computing #Current #Expert #Guidelines #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Quantum #Questions #Report #Say #Status"
+   },
+   "tokens": 758,
+   "latency_ms": 2.2284000006038696,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "data analyst vs data scientist career comparison — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around data analyst vs data scientist career comparison are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 data analyst vs data scientist career comparison — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around data analyst vs data scientist career comparison are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "data analyst vs data scientist career comparison — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around data analyst vs data scientist career comparison are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Data #Analysis #Analyst #Avoid #Beginner #Career #Comparison #Current #Expert #Guidelines #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Say"
+   },
+   "tokens": 774,
+   "latency_ms": 1.632699999390752,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "IELTS new format changes — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around IELTS new format changes are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 IELTS new format changes — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around IELTS new format changes are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "IELTS new format changes — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around IELTS new format changes are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Changes #Current #Expert #Format #Guidelines #Ielts #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Say #Status"
+   },
+   "tokens": 737,
+   "latency_ms": 1.583000001119217,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "protein folding AI drug discovery — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around protein folding AI drug discovery are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 protein folding AI drug discovery — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around protein folding AI drug discovery are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "protein folding AI drug discovery — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around protein folding AI drug discovery are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Current #Discovery #Drug #Expert #Folding #Guidelines #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Protein #Questions #Report #Say"
+   },
+   "tokens": 750,
+   "latency_ms": 1.3245999998616753,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "startup funding winter India 2026 — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around startup funding winter India 2026 are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 startup funding winter India 2026 — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around startup funding winter India 2026 are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "startup funding winter India 2026 — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around startup funding winter India 2026 are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Current #Expert #Funding #Guidelines #India #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Say #Startup #Status"
+   },
+   "tokens": 750,
+   "latency_ms": 1.2747000000672415,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "remote work visa countries 2026 — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around remote work visa countries 2026 are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 remote work visa countries 2026 — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around remote work visa countries 2026 are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "remote work visa countries 2026 — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around remote work visa countries 2026 are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Countries #Current #Expert #Guidelines #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Questions #Remote #Report #Say #Status #Them"
+   },
+   "tokens": 747,
+   "latency_ms": 1.341500001217355,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "solid state battery EV progress — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around solid state battery EV progress are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 solid state battery EV progress — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around solid state battery EV progress are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "solid state battery EV progress — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around solid state battery EV progress are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Battery #Beginner #Current #Expert #Guidelines #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Progress #Questions #Report #Say #Solid #State"
+   },
+   "tokens": 747,
+   "latency_ms": 1.2671000004047528,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "GSAT-20 satellite launch details — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around GSAT-20 satellite launch details are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 GSAT-20 satellite launch details — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around GSAT-20 satellite launch details are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "GSAT-20 satellite launch details — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around GSAT-20 satellite launch details are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Current #Details #Expert #Gsat #Guidelines #Key #Latest #Launch #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Satellite #Say"
+   },
+   "tokens": 749,
+   "latency_ms": 1.2810000007448252,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  },
+  {
+   "outputs": {
+    "linkedin": "SOC 2 compliance for SaaS startups — everything you need to know.\n\nThe topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\nIndustry surveys show adoption tripled since 2024. [1]\n\nIndustry insiders confirm expectations around SOC 2 compliance for SaaS startups are at an all-time high this cycle. [6]\n\nThe annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\nGrowth was concentrated in three regions. [2]\n\nThe official guidelines recommend a phased rollout over 12 months. [3]\n\nCompliance becomes mandatory from January next year. [3]\n\nExperts agree the fundamentals are strong but warn about execution risk. [4]\n\nThree of five analysts rate long-term impact as high. [4]\n\nThe most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\nA structured 90-day plan fixes most of it. [5]\n\nThe pattern across every source is the same: verify before you amplify.\n\nWhat would you add? Drop your take in the comments.\n\nSources:\n[1] Overview and current status — https://example-demo.com/overview\n[2] Key numbers from the latest report — https://example-demo.com/key-numbers\n[3] What the official guidelines say — https://example-demo.com/official-guidelines\n[4] Expert analysis and open questions — https://example-demo.com/expert-analysis\n[5] Beginner mistakes and how to avoid them — https://example-demo.com/beginner-mistakes",
+    "twitter": "1/8 SOC 2 compliance for SaaS startups — everything you need to know.\n\n2/8 The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n\n3/8 The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n\n4/8 Industry insiders confirm expectations around SOC 2 compliance for SaaS startups are at an all-time high this cycle. [6]\n\n5/8 The official guidelines recommend a phased rollout over 12 months. [3]\n\n6/8 Experts agree the fundamentals are strong but warn about execution risk. [4]\n\n7/8 The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n8/8 Full breakdown with sources below 🧵",
+    "instagram": "SOC 2 compliance for SaaS startups — everything you need to know.\n\n• The topic has moved from early experiments to mainstream adoption over the last two years. [1]\n• The annual report puts total investment at 4.2 billion dollars across 310 projects. [2]\n• Industry insiders confirm expectations around SOC 2 compliance for SaaS startups are at an all-time high this cycle. [6]\n• The official guidelines recommend a phased rollout over 12 months. [3]\n• Experts agree the fundamentals are strong but warn about execution risk. [4]\n• The most common beginner mistakes are skipping fundamentals, ignoring documentation, and chasing short-term trends. [5]\n\n💬 Which one surprised you?\n\n#Analysis #Avoid #Beginner #Compliance #Current #Expert #Guidelines #Key #Latest #Mistakes #Numbers #Official #Open #Overview #Questions #Report #Saas #Say #Soc #Startups"
+   },
+   "tokens": 752,
+   "latency_ms": 1.2874999993073288,
+   "fact_pass_pct": 83.3,
+   "claims": 24,
+   "style": {
+    "linkedin": 3.67,
+    "twitter": 3.67,
+    "instagram": 3.67
+   }
+  }
+ ],
+ "guardrail": {
+  "blocked": 13,
+  "missed": [],
+  "false_positives": []
+ }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThreadForge — cited multi-platform content studio</title>
+  <meta name="description" content="Research → Write → Fact-check → Edit ×3 → LinkedIn / X / Instagram. Every claim cited, every loop traced." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+  <!-- ─────────────── top nav ─────────────── -->
+  <nav class="topnav">
+    <div class="nav-inner">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <path d="M9 15a4.5 4.5 0 0 0 6.4.3l3.2-3.2a4.5 4.5 0 0 0-6.4-6.4l-1.7 1.7"/>
+          <path d="M15 9a4.5 4.5 0 0 0-6.4-.3l-3.2 3.2a4.5 4.5 0 0 0 6.4 6.4l1.7-1.7"/>
+        </svg>
+        <div class="brand-name">ThreadForge<span class="brand-dot">·</span><span class="brand-sub">cited content studio</span></div>
+      </div>
+      <div class="nav-right">
+        <span id="mode-chip" class="chip mock">● checking backend…</span>
+        <button id="btn-settings" class="btn ghost sm">
+          <svg viewBox="0 0 24 24" class="ic" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.9 2.9l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.9-2.9l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.9-2.9l.1.1a1.7 1.7 0 0 0 1.9.3h.1a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.5h.1a1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.9 2.9l-.1.1a1.7 1.7 0 0 0-.3 1.9v.1a1.7 1.7 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.5 1z"/></svg>
+          Keys
+        </button>
+        <button id="btn-audit" class="btn ghost sm" disabled>
+          <svg viewBox="0 0 24 24" class="ic" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Audit trail
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─────────────── settings drawer (BYOK) ─────────────── -->
+  <div id="drawer-overlay" class="overlay hidden"></div>
+  <aside id="settings" class="drawer hidden">
+    <div class="drawer-head">
+      <h2>Bring your own keys</h2>
+      <button class="btn ghost sm" id="btn-close-settings">✕</button>
+    </div>
+    <p class="drawer-hint">For demos: keys are stored <strong>only in your browser</strong> and sent per
+      request — never logged or persisted server-side. Server deployments use their own secrets instead.
+      No keys? The whole pipeline runs in deterministic mock mode.</p>
+    <label class="field">Groq API key
+      <input id="key-groq" type="password" placeholder="gsk_…" autocomplete="off" spellcheck="false" />
+    </label>
+    <label class="field">Tavily API key
+      <input id="key-tavily" type="password" placeholder="tvly-…" autocomplete="off" spellcheck="false" />
+    </label>
+    <label class="field">Backend URL
+      <input id="backend-url" type="text" placeholder="same origin (default)" spellcheck="false" />
+    </label>
+    <div class="drawer-actions">
+      <button id="btn-save-settings" class="btn primary sm">Save</button>
+      <button id="btn-clear-settings" class="btn ghost sm">Clear</button>
+    </div>
+    <p class="drawer-hint">
+      <a href="https://console.groq.com/keys" target="_blank" rel="noopener">Get a Groq key →</a>
+      <a href="https://app.tavily.com" target="_blank" rel="noopener">Get a Tavily key →</a>
+    </p>
+    <p id="settings-note" class="drawer-hint ok"></p>
+  </aside>
+
+  <!-- ─────────────── audit drawer ─────────────── -->
+  <aside id="audit" class="drawer wide hidden">
+    <div class="drawer-head">
+      <div class="seg" id="audit-tabs">
+        <button class="seg-btn active" data-pane="sources">Sources</button>
+        <button class="seg-btn" data-pane="facts">Fact-check</button>
+        <button class="seg-btn" data-pane="editor">Editor loop</button>
+        <button class="seg-btn" data-pane="trace">Trace</button>
+      </div>
+      <button class="btn ghost sm" id="btn-close-audit">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <section class="audit-pane active" data-pane="sources">
+        <ol id="out-sources" class="source-list"></ol>
+      </section>
+
+      <section class="audit-pane" data-pane="facts">
+        <div class="fact-legend">
+          <span class="badge pass">pass ≥ 0.90</span><span class="badge drop">dropped</span>
+          <span class="badge fail">rejected</span>
+          <span class="hint-inline">judge is a different model than the writer</span>
+        </div>
+        <div class="fact-list" id="out-facts"></div>
+      </section>
+
+      <section class="audit-pane" data-pane="editor">
+        <div class="timeline" id="out-editor"></div>
+      </section>
+
+      <section class="audit-pane" data-pane="trace">
+        <pre id="out-log" class="mono-log"></pre>
+      </section>
+    </div>
+  </aside>
+
+  <!-- ─────────────── hero / composer ─────────────── -->
+  <main class="stage">
+    <section class="hero" id="hero">
+      <h1>Type a topic.<br/><span class="grad">Get three cited posts.</span></h1>
+      <p class="lede">A 4-agent pipeline researches live sources, writes, fact-checks every claim against
+        its citation, loops an editor up to 3×, and scores evidence-safe viral angles for each platform.</p>
+
+      <div class="composer glass">
+        <div class="composer-main">
+          <input id="topic" type="text" maxlength="200" autocomplete="off"
+                 placeholder="Try “iPhone 17 launch”, “GATE 2026 syllabus”, “foreign masters legit process”…" />
+          <button id="btn-run" class="btn primary">
+            <svg viewBox="0 0 24 24" class="ic" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span id="btn-run-label">Generate</span>
+          </button>
+        </div>
+        <div class="composer-sub">
+          <div class="platform-picks">
+            <label class="pick"><input type="checkbox" value="linkedin" checked>
+              <span class="pick-chip li"><svg viewBox="0 0 24 24" class="ic" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>LinkedIn</span></label>
+            <label class="pick"><input type="checkbox" value="twitter" checked>
+              <span class="pick-chip tw"><svg viewBox="0 0 24 24" class="ic" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg>X thread</span></label>
+            <label class="pick"><input type="checkbox" value="instagram" checked>
+              <span class="pick-chip ig"><svg viewBox="0 0 24 24" class="ic" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>Instagram</span></label>
+          </div>
+          <span class="composer-note">every claim ships with a [n] citation</span>
+        </div>
+
+        <!-- live pipeline rail -->
+        <div id="rail" class="rail hidden">
+          <div class="rail-track" id="rail-track"></div>
+          <pre id="live-log" class="mono-log slim hidden"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────── results workspace ─────────────── -->
+    <section id="results" class="workspace hidden">
+
+      <div class="stats" id="stats"></div>
+      <div class="virality-lab" id="virality-lab"></div>
+
+      <div class="workspace-grid">
+        <!-- platform switcher -->
+        <aside class="switcher" id="switcher">
+          <button class="sw active" data-platform="linkedin">
+            <span class="sw-logo li"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
+            <span class="sw-body"><b>LinkedIn</b><i id="fit-li">—</i></span>
+            <span class="sw-bar" id="bar-li"><i style="width:0%"></i></span>
+          </button>
+          <button class="sw" data-platform="twitter">
+            <span class="sw-logo tw"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg></span>
+            <span class="sw-body"><b>X thread</b><i id="fit-tw">—</i></span>
+            <span class="sw-bar" id="bar-tw"><i style="width:0%"></i></span>
+          </button>
+          <button class="sw" data-platform="instagram">
+            <span class="sw-logo ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+            <span class="sw-body"><b>Instagram</b><i id="fit-ig">—</i></span>
+            <span class="sw-bar" id="bar-ig"><i style="width:0%"></i></span>
+          </button>
+
+          <div class="sw-note">
+            <button id="btn-copy-active" class="btn ghost sm full">
+              <svg viewBox="0 0 24 24" class="ic" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+              Copy for platform
+            </button>
+            <button id="btn-regenerate" class="btn ghost sm full">↺ Regenerate</button>
+          </div>
+        </aside>
+
+        <!-- native preview canvas -->
+        <div class="canvas" id="canvas">
+          <div class="canvas-glow" data-glow="linkedin"></div>
+
+          <!-- LinkedIn -->
+          <article class="preview" data-platform="linkedin">
+            <div class="native li-card" id="li-card"></div>
+          </article>
+
+          <!-- X thread -->
+          <article class="preview" data-platform="twitter">
+            <div class="native tw-wrap" id="tw-card"></div>
+          </article>
+
+          <!-- Instagram -->
+          <article class="preview" data-platform="instagram">
+            <div class="native ig-phone" id="ig-card"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>ThreadForge</span> — 4-agent LangGraph · virality strategist · guardrails in & out · full audit state per run
+    <span class="foot-dot">·</span> <a href="#" id="foot-github">GitHub</a>
+  </footer>
+
+  <script src="app.js?v=2"></script>
+</body>
+</html>

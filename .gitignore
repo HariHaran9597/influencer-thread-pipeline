@@ -1,0 +1,10 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/cache/
+reports/traces.jsonl
+reports/run_*.md
+gradio_cached_examples/
+*.egg-info/
