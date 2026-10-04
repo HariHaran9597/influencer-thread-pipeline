@@ -1,5 +1,9 @@
 # ThreadForge
 
+**Status:** local FastAPI application with an optional Gradio interface. Use the
+quickstart below to try it; no verified public deployment URL is advertised here.
+Mock-mode checks demonstrate workflow behaviour, not customer adoption or social engagement.
+
 ### Evidence-aware, multi-agent content generation for LinkedIn, X, and Instagram
 
 ThreadForge is a stateful [LangGraph](https://langchain-ai.github.io/langgraph/) workflow that turns a topic into platform-native social content backed by research citations.
